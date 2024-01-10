@@ -1,14 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "./index.css";
 
 function Foopies() {
   return (
     <>
-      <h1>Welcome to my Foopie Store!</h1>
-      <h2>
-        Foopie is a delicious combination of food and pie or dessert that you
-        never tried before
-      </h2>
+      <header>
+        <h1>Welcome to my Foopie Store!</h1>
+        <h2>
+          Foopie is a delicious combination of food and pie or dessert that you
+          never tried before
+        </h2>
+      </header>
       <FoopieList />
 
       <input type="text" />
@@ -18,7 +21,7 @@ function Foopies() {
 
 const FoopieList = () => {
   return (
-    <section>
+    <section className="foopieList">
       <FoopieItem />
       <FoopieItem />
       <FoopieItem />
@@ -27,7 +30,7 @@ const FoopieList = () => {
 };
 const FoopieItem = () => {
   return (
-    <article>
+    <article className="foopieItem">
       <Image />
       <Title />
       <Description />
@@ -36,14 +39,16 @@ const FoopieItem = () => {
 };
 
 const Image = () => {
-  return <img src="" alt="" />;
+  return <img src="./assets/chocolate_pizza.jpg" />;
 };
 const Title = () => {
-  return <h3></h3>;
+  return <h3>Pieezza</h3>;
 };
 
 const Description = () => {
-  return <p></p>;
+  return (
+    <p>A slice of pizza topped with oreos, marshmallows, and icing sugar</p>
+  );
 };
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
