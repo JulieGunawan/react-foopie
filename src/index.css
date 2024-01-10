@@ -40,10 +40,11 @@ h2 {
 }
 
 .foopieItem img {
-  width: 100%;
-  object-fit: cover;
-  align-items: center;
-  margin: 0 auto;
+  width: 350px;
+  height: 350px;
+  object-fit: contain;
+  text-align: center;
+  margin: 0 50px;
 }
 
 .foopieItem h3 {
