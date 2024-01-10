@@ -22,34 +22,25 @@ function Foopies() {
 const FoopieList = () => {
   return (
     <section className="foopieList">
-      <FoopieItem />
-      <FoopieItem />
-      <FoopieItem />
+      <FoopieItem title="Piezza" />
+      <FoopieItem title="Sweets" number={22} />
+      <FoopieItem title="Chocoloco" />
     </section>
   );
 };
-const FoopieItem = () => {
+
+const img = "./assets/chocolate_pizza.jpg";
+const FoopieItem = (props) => {
+  console.log(props);
   return (
     <article className="foopieItem">
-      <Image />
-      <Title />
-      <Description />
+      <img src={img} alt="chocolate pizza" />
+      <h3>{props.title}</h3>
+      <p>A slice of pizza topped with oreos, marshmallows, and icing sugar</p>
     </article>
   );
 };
 
-const Image = () => {
-  return <img src="./assets/chocolate_pizza.jpg" />;
-};
-const Title = () => {
-  return <h3>Pieezza</h3>;
-};
-
-const Description = () => {
-  return (
-    <p>A slice of pizza topped with oreos, marshmallows, and icing sugar</p>
-  );
-};
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(<Foopies />);

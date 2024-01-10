@@ -40,18 +40,22 @@ h2 {
 }
 
 .foopieItem img {
-  width: 50%;
+  width: 100%;
   object-fit: cover;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .foopieItem h3 {
   margin-top: 1rem;
   font-size: 1.5rem;
+  text-align: center;
 }
 
 .foopieItem p {
   margin-top: 1rem;
   padding: 0, 10px, 10px, 10px;
+  text-align: justify;
 }
 
 @media screen and (min-width: 768px) {
