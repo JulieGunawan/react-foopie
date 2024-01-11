@@ -55,15 +55,6 @@ const FoopieList = () => {
 };
 
 const EventExample = () => {
-  const buttonClicked = () => {
-    alert("Button Clicked");
-  };
-
-  const handleFormInput = (e) => {
-    console.log("input name:", e.target.name);
-    console.log("input value: ", e.target.value);
-  };
-
   const handleFormSubmit = (e) => {
     e.preventDefault();
     console.log("form submitted");
@@ -71,7 +62,14 @@ const EventExample = () => {
   return (
     <section>
       <form onSubmit={handleFormSubmit}>
-        <input type="text" name="example" onChange={handleFormInput} />
+        <input
+          type="text"
+          name="example"
+          onChange={(e) => {
+            console.log(e.target.name);
+            console.log(e.target.value);
+          }}
+        />
         <button type="submit">Search</button>
       </form>
     </section>
