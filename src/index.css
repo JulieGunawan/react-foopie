@@ -57,6 +57,14 @@ h2 {
   margin-top: 1rem;
   padding: 0, 10px, 10px, 10px;
   text-align: justify;
+  height: 85px;
+}
+
+.foopieItem button {
+  text-align: center;
+  display: block;
+  padding: 10px;
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 768px) {

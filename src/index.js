@@ -2,24 +2,25 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
-const firstFoopie = {
-  title: "Pieeza",
-  img: "./assets/chocolate_pizza.jpg",
-  description:
-    "A slice of pizza topped with oreos, marshmallows, and icing sugar",
-};
-
-const secondFoopie = {
-  title: "Chocoloco",
-  img: "./assets/choco-cheese.jpg",
-  description: "A plate of cheese paired with chocolate cake and brownies",
-};
-
-const thirdFoopie = {
-  title: "Tayto Ice Cr3am",
-  img: "./assets/ice-cream-baked-potato.jpg",
-  description: "Hot steaming baked potato topped with ice creams and sprinkles",
-};
+const foopieItems = [
+  {
+    title: "Pieeza",
+    img: "./assets/chocolate_pizza.jpg",
+    description:
+      "A slice of pizza topped with oreos, marshmallows, and icing sugar",
+  },
+  {
+    title: "Chocoloco",
+    img: "./assets/choco-cheese.jpg",
+    description: "A plate of cheese paired with chocolate cake and brownies",
+  },
+  {
+    title: "Tayto Ice Cr3am",
+    img: "./assets/ice-cream-baked-potato.jpg",
+    description:
+      "Hot steaming baked potato topped with ice creams and sprinkles",
+  },
+];
 
 function Foopies() {
   return (
@@ -41,32 +42,22 @@ function Foopies() {
 const FoopieList = () => {
   return (
     <section className="foopieList">
-      <FoopieItem
-        title={firstFoopie.title}
-        img={firstFoopie.img}
-        description={firstFoopie.description}
-      />
-      <FoopieItem
-        title={secondFoopie.title}
-        img={secondFoopie.img}
-        description={secondFoopie.description}
-      />
-      <FoopieItem
-        title={thirdFoopie.title}
-        img={thirdFoopie.img}
-        description={thirdFoopie.description}
-      />
+      {foopieItems.map((foopieItem) => (
+        <FoopieItem key={foopieItem.title} {...foopieItem} />
+      ))}
     </section>
   );
 };
 
 const FoopieItem = (props) => {
-  console.log(props);
+  //you need to initialize the value of each img title and description
+  const { img, title, description } = props;
   return (
     <article className="foopieItem">
-      <img src={props.img} alt="chocolate pizza" />
-      <h3>{props.title}</h3>
-      <p>{props.description}</p>
+      <img src={img} alt={title} />
+      <h3>{title}</h3>
+      <p>{description}</p>
+      <button>Click Me</button>
     </article>
   );
 };
