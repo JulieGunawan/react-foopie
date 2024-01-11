@@ -59,15 +59,20 @@ const EventExample = () => {
     alert("Button Clicked");
   };
 
-  const handleFormInput = () => {
-    alert("input entered");
+  const handleFormInput = (e) => {
+    console.log("input name:", e.target.name);
+    console.log("input value: ", e.target.value);
   };
 
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    console.log("form submitted");
+  };
   return (
     <section>
-      <form>
+      <form onSubmit={handleFormSubmit}>
         <input type="text" name="example" onChange={handleFormInput} />
-        <button onClick={buttonClicked}>Search</button>
+        <button type="submit">Search</button>
       </form>
     </section>
   );
