@@ -4,17 +4,20 @@ import "./index.css";
 
 const foopieItems = [
   {
+    id: 1,
     title: "Pieeza",
     img: "./assets/chocolate_pizza.jpg",
     description:
       "A slice of pizza topped with oreos, marshmallows, and icing sugar",
   },
   {
+    id: 2,
     title: "Chocoloco",
     img: "./assets/choco-cheese.jpg",
     description: "A plate of cheese paired with chocolate cake and brownies",
   },
   {
+    id: 3,
     title: "Tayto Ice Cr3am",
     img: "./assets/ice-cream-baked-potato.jpg",
     description:
@@ -33,18 +36,39 @@ function Foopies() {
         </h2>
       </header>
       <FoopieList />
-
-      <input type="text" />
     </>
   );
 }
 
 const FoopieList = () => {
   return (
-    <section className="foopieList">
-      {foopieItems.map((foopieItem) => (
-        <FoopieItem key={foopieItem.title} {...foopieItem} />
-      ))}
+    <>
+      <EventExample />
+      <section className="foopieList">
+        {foopieItems.map((foopieItem) => (
+          //...foopieItem is the same as const {id, img, title, description} = foopieItem
+          <FoopieItem key={foopieItem.id} {...foopieItem} />
+        ))}
+      </section>
+    </>
+  );
+};
+
+const EventExample = () => {
+  const buttonClicked = () => {
+    alert("Button Clicked");
+  };
+
+  const handleFormInput = () => {
+    alert("input entered");
+  };
+
+  return (
+    <section>
+      <form>
+        <input type="text" name="example" onChange={handleFormInput} />
+        <button onClick={buttonClicked}>Search</button>
+      </form>
     </section>
   );
 };
@@ -57,7 +81,6 @@ const FoopieItem = (props) => {
       <img src={img} alt={title} />
       <h3>{title}</h3>
       <p>{description}</p>
-      <button>Click Me</button>
     </article>
   );
 };
