@@ -52,8 +52,8 @@ h2 {
   width: 350px;
   height: 350px;
   object-fit: contain;
-  text-align: center;
-  margin: 0 50px;
+  display: block;
+  margin: 0 auto;
 }
 
 .foopieItem h3 {
@@ -64,7 +64,7 @@ h2 {
 
 .foopieItem .foopieDescription {
   margin-top: 1rem;
-  padding: 0, 10px, 10px, 10px;
+  padding: 0 10px 10px 10px;
   text-align: justify;
   height: 85px;
 }
@@ -72,7 +72,7 @@ h2 {
 .foopieItem .foopieId {
   background-color: red;
   border-radius: 20px 0px;
-  width: 30px;
+  width: 70px;
   text-align: center;
   color: #fff;
 }
