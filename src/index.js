@@ -1,31 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import FoopieItems from "./Foopies";
 
-const foopieItems = [
-  {
-    id: 1,
-    title: "Pieeza",
-    img: "./assets/chocolate_pizza.jpg",
-    description:
-      "A slice of pizza topped with oreos, marshmallows, and icing sugar",
-  },
-  {
-    id: 2,
-    title: "Chocoloco",
-    img: "./assets/choco-cheese.jpg",
-    description: "A plate of cheese paired with chocolate cake and brownies",
-  },
-  {
-    id: 3,
-    title: "Tayto Ice Cr3am",
-    img: "./assets/ice-cream-baked-potato.jpg",
-    description:
-      "Hot steaming baked potato topped with ice creams and sprinkles",
-  },
-];
-
-function Foopies() {
+function FoopieStore() {
   return (
     <>
       <header>
@@ -39,20 +17,6 @@ function Foopies() {
     </>
   );
 }
-
-const FoopieList = () => {
-  return (
-    <>
-      <EventExample />
-      <section className="foopieList">
-        {foopieItems.map((foopieItem) => (
-          //...foopieItem is the same as const {id, img, title, description} = foopieItem
-          <FoopieItem key={foopieItem.id} {...foopieItem} />
-        ))}
-      </section>
-    </>
-  );
-};
 
 const EventExample = () => {
   const handleFormSubmit = (e) => {
@@ -76,13 +40,39 @@ const EventExample = () => {
   );
 };
 
+const FoopieList = () => {
+  const getFoopie = (id) => {
+    const foopie = FoopieItems.find((foopie) => foopie.id === id);
+    console.log(foopie);
+  };
+
+  return (
+    <>
+      <EventExample />
+      <section className="foopieList">
+        {FoopieItems.map((foopieItem) => (
+          //...foopieItem is the same as const {id, img, title, description} = foopieItem
+          //the () is the same as {return <FoopieItem>}
+          <FoopieItem
+            key={foopieItem.id}
+            {...foopieItem}
+            getFoopie={getFoopie}
+          />
+        ))}
+      </section>
+    </>
+  );
+};
+
 const FoopieItem = (props) => {
   //you need to initialize the value of each img title and description
-  const { img, title, description } = props;
+  const { id, img, title, description, getFoopie } = props;
+
   return (
     <article className="foopieItem">
       <img src={img} alt={title} />
       <h3>{title}</h3>
+      <button onClick={() => getFoopie(id)}>Display Title</button>
       <p>{description}</p>
     </article>
   );
@@ -90,4 +80,4 @@ const FoopieItem = (props) => {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<Foopies />);
+root.render(<FoopieStore />);
