@@ -10,3 +10,5 @@ const FoopieItem = (props) => {
     </article>
   );
 };
+
+export default FoopieItem;

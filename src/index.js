@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import FoopieItem from "./Foopie";
 import FoopieItems from "./Foopies";
 
 function FoopieStore() {
@@ -61,20 +62,6 @@ const FoopieList = () => {
         ))}
       </section>
     </>
-  );
-};
-
-const FoopieItem = (props) => {
-  //you need to initialize the value of each img title and description
-  const { id, img, title, description, getFoopie } = props;
-
-  return (
-    <article className="foopieItem">
-      <img src={img} alt={title} />
-      <h3>{title}</h3>
-      <button onClick={() => getFoopie(id)}>Display Title</button>
-      <p>{description}</p>
-    </article>
   );
 };
 
