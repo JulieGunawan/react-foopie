@@ -6,7 +6,7 @@ import FoopieItems from "./Foopies";
 
 function FoopieStore() {
   return (
-    <>
+    <session className="foopieStore">
       <header>
         <h1>Welcome to my Foopie Store!</h1>
         <h2>
@@ -15,7 +15,7 @@ function FoopieStore() {
         </h2>
       </header>
       <FoopieList />
-    </>
+    </session>
   );
 }
 
@@ -50,6 +50,7 @@ const FoopieList = () => {
   return (
     <>
       <EventExample />
+      <h1 className="foopieBestSeller">Foopies Best Sellers</h1>
       <section className="foopieList">
         {FoopieItems.map((foopieItem) => (
           //...foopieItem is the same as const {id, img, title, description} = foopieItem

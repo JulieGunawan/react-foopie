@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+.foopieStore {
+  display: block;
+  padding: 10px;
+}
+
 header {
   margin: 0px;
   padding: 50px;
@@ -32,6 +37,10 @@ h2 {
   gap: 0.5rem;
 }
 
+.foopieBestSeller {
+  text-align: left;
+}
+
 .foopieItem {
   font-size: 18px;
   line-height: 30px;
@@ -53,11 +62,19 @@ h2 {
   text-align: center;
 }
 
-.foopieItem p {
+.foopieItem .foopieDescription {
   margin-top: 1rem;
   padding: 0, 10px, 10px, 10px;
   text-align: justify;
   height: 85px;
+}
+
+.foopieItem .foopieId {
+  background-color: red;
+  border-radius: 20px 0px;
+  width: 30px;
+  text-align: center;
+  color: #fff;
 }
 
 .foopieItem button {
