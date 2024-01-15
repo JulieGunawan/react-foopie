@@ -4,18 +4,13 @@ import "./App.css";
 import FoopieItem from "./Foopie";
 import FoopieItems from "./Foopies";
 import Navbar from "./components/navbar";
+import Hero from "./components/Hero";
 
 function App() {
   return (
     <session className="foopieStore">
       <Navbar />
-      <header>
-        <h1>Welcome to my Foopie Store!</h1>
-        <h2>
-          Foopie is a delicious combination of food and pie or dessert that you
-          never tried before
-        </h2>
-      </header>
+      <Hero />
       <FoopieList />
     </session>
   );
@@ -37,7 +32,9 @@ const EventExample = () => {
             console.log(e.target.value);
           }}
         />
-        <button type="submit">Search</button>
+        <button type="submit" className="btn">
+          Search
+        </button>
       </form>
     </section>
   );
