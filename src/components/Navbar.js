@@ -1,6 +1,8 @@
 import logo from "../assets/logo.png";
 import "../App.css";
 import "../index.css";
+import { pageLinks } from "../Foopies";
+import PageLink from "./PageLink";
 const Navbar = () => {
   return (
     <nav className="navbar">
@@ -12,33 +14,15 @@ const Navbar = () => {
           </button>
         </div>
         <ul class="nav-links" id="nav-links">
-          <li>
-            <a href="#home" class="nav-link">
-              {" "}
-              home{" "}
-            </a>
-          </li>
-
-          <li>
-            <a href="#about" class="nav-link">
-              {" "}
-              about{" "}
-            </a>
-          </li>
-
-          <li>
-            <a href="#services" class="nav-link">
-              {" "}
-              selections{" "}
-            </a>
-          </li>
-
-          <li>
-            <a href="#tours" class="nav-link">
-              {" "}
-              contact
-            </a>
-          </li>
+          {pageLinks.map((link) => {
+            return (
+              <li key={link.id}>
+                <a href={link.href} className="nav-link">
+                  {link.text}
+                </a>
+              </li>
+            );
+          })}
         </ul>
 
         <ul class="nav-icons">
