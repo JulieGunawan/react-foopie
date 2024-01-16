@@ -1,7 +1,7 @@
 import logo from "../assets/logo.png";
 import "../App.css";
 import "../index.css";
-import { pageLinks } from "../Foopies";
+import { pageLinks, socialLinks } from "../Foopies";
 import PageLink from "./PageLink";
 const Navbar = () => {
   return (
@@ -26,21 +26,15 @@ const Navbar = () => {
         </ul>
 
         <ul class="nav-icons">
-          <li>
-            <a href="https://www.facebook.com" target="_blank" class="nav-icon">
-              <i class="fab fa-facebook"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.twitter.com" target="_blank" class="nav-icon">
-              <i class="fa-brands fa-x-twitter" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.twitter.com" target="_blank" class="nav-icon">
-              <i class="fab fa-squarespace"></i>
-            </a>
-          </li>
+          {socialLinks.map((link) => {
+            return (
+              <li key={link.id}>
+                <a href={link.href} className="nav-icon">
+                  <i class={link.icon}></i>
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </nav>
