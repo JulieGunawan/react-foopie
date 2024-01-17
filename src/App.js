@@ -5,6 +5,7 @@ import FoopieList from "./components/FoopieList";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Hero from "./components/Hero";
+import Selections from "./components/Selections";
 import Footer from "./components/Footer";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+      <Selections />
       <FoopieList />
       <Footer />
     </session>

@@ -1,13 +1,26 @@
 const Foopie = (props) => {
   //you need to initialize the value of each img title and description
-  const { id, img, title, description } = props;
+  const { id, img, shape, price, title, description } = props;
 
   return (
-    <article className="selection">
+    <article className="featured">
       <p className="foopieId">{`# ${id}`}</p>
       <img className="foopieImg" src={img} alt={title} />
-      <h3>{title}</h3>
-      <p className="foopieDescription">{description}</p>
+      <div className="foopieInfo">
+        <div className="foopieTitle">
+          <h3>{title}</h3>
+        </div>
+        <p className="foopieDescription">{description}</p>
+        <div className="foopieFooter">
+          <p>
+            <span>
+              <i class="fa-solid fa-shapes"></i>
+            </span>
+            {shape}
+          </p>
+          <p>price ${price}</p>
+        </div>
+      </div>
     </article>
   );
 };

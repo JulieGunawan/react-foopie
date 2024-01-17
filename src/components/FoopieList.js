@@ -5,10 +5,10 @@ import Foopie from "./Foopie";
 
 const FoopieList = () => {
   return (
-    <section className="section selections" id="selections">
-      <Title title="our" subTitle="selections" />
+    <section className="section featured-foopies" id="featured">
+      <Title title="Featured" subTitle="Foopies" />
 
-      <div className="section-center selection-center">
+      <div className="section-center featured-center">
         {FoopieItems.map((foopie) => {
           return (
             //...foopie is the same as const {id, img, title, description} = foopie

@@ -2,7 +2,7 @@ import "../App.css";
 
 const Hero = () => {
   return (
-    <section className="hero">
+    <section className="hero" id="home">
       <div className="hero-banner">
         <h1>Welcome to my Foopie Store!</h1>
         <p>
