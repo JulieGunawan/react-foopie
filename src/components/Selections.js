@@ -4,7 +4,7 @@ import { products } from "../Foopies";
 
 const Selections = () => {
   return (
-    <section className="selections">
+    <section className="selections" id="selections">
       <Title title="our" subTitle="selections" />
       <div className="selections-center">
         {products.map((product) => {
